@@ -1,0 +1,27 @@
+<mat-card [ngStyle]="{'height': getHeight()}" class="mat-cards">
+<mat-list class="card-mat-list">
+    <mat-list-item class="mat-item-header">
+        <p class="h-cards">Messages</p>
+        <span class="tasks-circle-do">
+            <img src="/assets/img/Quantity2.png" alt="image" class="rescale-img-info">
+        </span>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item *ngFor="let msg of messages">
+        <img matListAvatar
+             [src]="this.users.getUserImage(msg.author)"
+             alt="image" class="card-img-mat-list-avatar">
+        <span>
+            <p><span>{{msg.author}}</span><span class="time-txt">{{msg.addedTime}}</span></p>
+            <br>
+            <p>{{msg.txt}}</p>
+            <br>
+            <p><img src="/src/assets/img/Wektorowy.png">
+            &nbsp;
+            <img src="/src/assets/img/Options.png"></p>            
+        </span>
+      <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
+</mat-card>
+

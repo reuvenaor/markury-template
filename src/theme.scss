@@ -1,0 +1,328 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$mat-test-ui-platte: (
+    50 : #ffffff,           // white..
+    100 : #f6f7fa,          // content background
+    200 : #dadee7,          // watched card
+    300 : #88a9ff,          //
+    400 : #5384ff,          // circle small blue
+    500 : #5584ff,          // button header
+    600 : #f83c7b,          //  circle small pink
+    700 : #122143,          // border nav-bar-list
+    800 : #0e1a35,          // nav-bar
+    900 : #0e1a35,          // text content
+    A100 : #ffffff,
+    A200 : #5584ff,
+    A400 : #8492af,         // border-cards & grey text
+    A700 : #0b0a10,         // border line
+    contrast: (
+        50 : #0e1a35,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+
+$test-ui-primary: mat-palette($mat-test-ui-platte); // mat-palette($mat-testuiplate, 50, 100, A400);
+$test-ui-accent: mat-palette($mat-test-ui-platte);
+$test-ui-warn: mat-palette($mat-test-ui-platte);
+
+$test-ui-theme: mat-light-theme($test-ui-primary, $test-ui-accent, $test-ui-warn);
+
+$desktop: 1920px;
+$desktop-small: 1200px;
+$mobile-large: 640px;
+$mobile: 480px;
+$mobile-small: 300px;
+
+
+@mixin custom-theme($theme) {
+    $primary: map-get($theme, warn);
+    $accent: map-get($theme, warn);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    .navy, .ml-file-list, .ml-file-list p {
+        background-color: mat-color($primary, 800);
+        color: mat-color($primary, 50);
+    }
+    .ml-file-list .mat-list-item ,.ml-file-list {
+        border-bottom: 2px solid mat-color($primary, A700);
+    }
+    .ml-file-list img {
+        @media only screen and (max-width: $desktop-small) {
+            display: none;
+        }
+    }
+
+    
+    /***************** header *****************/
+    .mat-toolbar.mat-primary {
+        position: sticky;
+        top: 0;
+      }
+      .content-box {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+      }
+
+    .header-right {
+        position: absolute !important;
+        right: 34px !important;
+        @media only screen and (max-width: $desktop-small) {
+            right: 20px !important;
+        }
+        @media only screen and (max-width: $mobile) {
+            right: 10px !important;
+        }
+      }
+    .img-rescale{
+        width: auto !important;
+        @media only screen and (max-width: $desktop-small) {
+            width: 100% !important;
+        }
+        @media only screen and (max-width: $mobile) {
+            width: 60% !important;
+        }
+    }
+    /****************************************/
+    /************* body *********************/
+    .img-rescale-content {
+        width: 100% !important;
+        @media only screen and (max-width: $desktop-small) {
+            width: 90% !important;
+            margin-top: 5%;
+        }
+        @media only screen and (max-width: $mobile) {
+            width: 90% !important;
+            margin-top: 5%;
+        }
+    }
+    .card-rescale {
+        @media only screen and (max-width: $desktop-small) {
+            margin-top: 5% !important;
+            flex-shrink: 0.6 !important;
+        }
+        @media only screen and (max-width: $mobile) {
+            margin-top: 5% !important;
+            flex-shrink: 0.6 !important;
+        }
+    }
+    .hello-user {
+        font-size: 48px;
+        margin: 40px;
+        @media only screen and (max-width: $mobile) {
+            font-size: 34px !important;
+            margin: 12px;
+        }
+
+    }
+    /****************************************/
+    /************** Cards  ******************/
+
+    .mat-cards {
+        width: 474px;
+        padding: 0px !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        border: solid 1px rgba(132, 146, 175, 0.3);
+ 
+        @media only screen and (max-width: $mobile) {
+            width: 330px !important;
+            height: 100% !important;
+        }
+        
+    }
+
+    .h-cards {
+        font-size: 24px !important;
+        @media only screen and (max-width: $mobile) {
+            display: 18px !important;
+        }
+    }
+    .mat-list-item {
+        height: 108px !important;
+        width: 474px !important;
+        @media only screen and (max-width: $mobile) {
+            width: 330px !important;
+            height: 80px !important;
+        }
+    }
+
+    .card-img-mat-list-avatar {
+        width: 47px !important;
+        height: 47px !important;
+        margin-right: 25px !important;
+        margin-left: 33px !important;
+        @media only screen and (max-width: $mobile) {
+            width: 35px !important;
+            height: 35px !important;
+            margin-right: 18px !important;
+            margin-left: 24px !important;
+        }
+    }
+
+    .mat-item-header {
+        height: 91px !important;
+        @media only screen and (max-width: $mobile) {
+            height: 67px !important;
+
+        }
+    }
+
+    .tasks-circle-done {
+        position: absolute;
+        right: 88px;
+        @media only screen and (max-width: $mobile) {
+            right: 65px;
+        }
+    }
+    .tasks-circle-do {
+        position: absolute;
+        right: 31px;
+        @media only screen and (max-width: $mobile) {
+            right: 23px;
+        }
+    }
+    
+    .img-time {
+        position: absolute !important;
+        right: 45px !important;
+        @media only screen and (max-width: $mobile) {
+            right: 33px;
+        }
+    }
+
+    .time-txt {
+        font-size: 14px;
+        color: mat-color($primary, A400);
+        line-height: 1.2;
+        @media only screen and (max-width: $mobile) {
+            font-size: 10px !important;
+        }
+    }
+
+    .mat-toolbar-row, .mat-toolbar-single-row {
+        height: 108px !important;
+        width: 100% !important;
+        @media only screen and (max-width: $mobile) {
+            height: 80px !important;
+        }
+    }
+    .rescale-img-info {
+        height: 100% !important;
+        width: 100% !important;
+        @media only screen and (max-width: $mobile) {
+            height: 74% !important;
+            width: 74% !important;
+        }
+    }
+    /*********************************************/
+    /****************** nav-bar ******************/  
+
+    .navy {
+        width: 16%;
+        height: 200% !important;
+        @media only screen and (max-width: $mobile) {
+            height: 300% !important;
+        }
+    }
+
+    .mat-nav-list  {
+        height: 100px !important;
+        width: 100% !important;                
+        @media only screen and (max-width: $mobile) {
+            height: 74px !important;
+        }
+    }
+
+    .tool-bar-header {
+        background-color: mat-color($primary, 50);
+        
+    }
+    .mat-nav-list {
+        padding: 0px;
+        border: 2px solid mat-color($primary, 800);
+    }
+    .mat-list, .mat-nav-list, .mat-selection-list {
+        padding: 0px !important;
+    }
+
+     .mat-icon.mat-icon-inline {
+        margin-right: 3px;
+         
+    }
+    .mat-icon.mat-icon-inline svg  {
+        margin-left: 16%;
+        margin-right: 13px;
+        width: 24px;
+        height: 24px;
+        line-height: 2;
+        margin-top: 100%;
+    }
+
+    a.mat-list-item {
+        width: 100% !important;
+    }
+
+
+    .p-nav {
+        font-size: 24px;
+        @media only screen and (max-width: $mobile) {
+            display: none;
+        }
+        @media only screen and (max-width: $desktop-small) {
+            display: none;
+        }
+    }
+
+
+
+    // .mat-list-item-content:hover {                //all list
+    //     background-color: mat-color($primary, A400)
+    // }
+
+
+    mat-icon svg {
+        @media only screen and (max-width: $mobile) {
+            height: 50% !important;
+            width: 50% !important;
+        }
+      }
+    /***************** drawer ******************/
+    .mat-drawer-content {
+        height: 100%;
+        @media only screen and (max-width: $mobile) {
+            height: 300% !important;
+        }
+    }
+    
+    .mat-drawer, .mat-drawer.mat-drawer-side, .mat-drawer-content, .mat-sidenav {
+            height: 100%;
+        @media only screen and (max-width: $mobile) {
+            height: 300% !important;
+        }
+    }
+    /******************************************/
+    // .mat-button-focus-overlay {
+    //     border-radius: 0 !important;
+    //   }        
+}
+
+@include custom-theme($test-ui-theme);
+

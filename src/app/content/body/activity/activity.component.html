@@ -1,0 +1,25 @@
+<mat-card [ngStyle]="{'height': getHeight()}" class="mat-cards">
+  <mat-list class="card-mat-list">
+        <mat-list-item class="mat-item-header">
+              <p class="h-cards">Activity</p>
+              <span class="tasks-circle-do">
+                  <img src="/assets/img/Quantity10.png" class="rescale-img-info">
+              </span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let act of activities">
+              <img matListAvatar 
+                   [src]="this.users.getUserImage(act.name)"
+                    alt="image"
+                    class="card-img-mat-list-avatar">
+              <span>
+                  <p>{{act.name}} <span class="time-txt"> {{act.activity}} </span>{{act.txt}}</p>
+                  <br>
+                  <p class="time-txt"><img src="/assets/img/Time.png" alt="image">
+                        &nbsp;
+                        <span class="time-txt"> {{act.addedTime}}</span>
+                  </p>
+              </span>
+        </mat-list-item>
+      </mat-list>
+  </mat-card>

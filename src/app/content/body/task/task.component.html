@@ -1,0 +1,30 @@
+<mat-card [ngStyle]="{'height': getHeight()}" class="mat-cards">
+<mat-list class="card-mat-list">
+      <mat-list-item class="mat-item-header">
+            <p class="h-cards">Tasks</p>
+            <span class="tasks-circle-done">
+                  <img src="/assets/img/5.png" class="rescale-img-info">
+            </span>
+            <span class="tasks-circle-do">
+                  <img src="/assets/img/2.png" class="rescale-img-info">
+            </span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngFor="let tsk of tasks">
+            <img matListAvatar [src]="this.getPresentImg(tsk.txt)"
+                  alt="image"
+                  class="card-img-mat-list-avatar">
+            <span>
+                  <p>{{tsk.txt}}</p>
+                  <br>
+                  <p class="time-txt">
+                        <img src="/assets/img/Time.png" alt="image">
+                        &nbsp;{{tsk.addedTime}}
+                  </p>
+            </span> 
+            <img src="/assets/img/OptionsK.png" alt="image" class="img-time">
+            <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+</mat-card>
+        

@@ -1,0 +1,49 @@
+
+<div #contentBox class="content-box" >
+<mat-sidenav-content #con >
+  <mat-toolbar fxLayout="row wrap" fxLayoutAlign="space-between center" >
+    <div fxLayout="row">
+      <p fxFlex>
+        <button mat-button (click)="toggleLeftSidenav()">
+          <img matListAvatar src="/assets/img/header/Menu.png"
+               alt="image" class="img-rescale">
+        </button>
+      </p>
+      <p>
+        <button mat-button>
+          <img src="/assets/img/header/Search.png"
+               alt="image" class="img-rescale">
+        </button>
+      </p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-around end">
+      <p>
+        <button mat-button>
+          <img src="/assets/img/header/Addprojectbutton.png"
+               alt="image" class="img-rescale">
+        </button>
+      </p>
+      <p>
+        <button mat-button>
+          <img src="/assets/img/header/Messages.png"
+               alt="image" class="img-rescale">
+        </button>
+      </p>
+      <p>
+        <button mat-button>
+          <img src="/assets/img/header/Notifications.png"
+               alt="image" class="img-rescale">
+        </button>
+      </p>
+      <p>
+        <button mat-button>
+          <img src="/assets/img/header/User.png" 
+               alt="image" class="img-rescale">
+        </button>
+      </p>
+    </div>
+  </mat-toolbar>
+  <app-body></app-body>
+</mat-sidenav-content>
+</div>
+

@@ -1,0 +1,33 @@
+<div fxLayout="column"
+     fxLayout.xs="column"
+     fxLayoutGap="42px"
+     fxLayoutAlign="space-evenly center"
+     fxLayoutGap.xs="10px">
+<div fxLayout="row" fxLayout.xs="column"
+     fxLayoutGap="43px" fxFlexAlign="start">
+    <div>
+        <h1 class="hello-user">Hello John!</h1>
+    </div>
+</div>
+<div fxLayout="row wrap" fxLayout.xs="column wrap"
+     fxLayoutGap="43px" fxFlexAlign="space-around center">
+    <div>
+        <img src="/assets/img/Left.png" alt="image" class="img-rescale-content">
+    </div>
+    <div>
+        <img src="/assets/img/Right.png" alt="image" class="img-rescale-content">
+    </div>
+</div>
+<div fxLayout="row wrap" fxLayout.xs="column wrap"
+     fxLayoutGap="43px" fxFlexAlign="space-around center">   
+    <div  class="card-rescale"> 
+        <app-task></app-task>
+    </div>
+    <div  class="card-rescale">
+        <app-message></app-message>
+    </div>
+    <div  class="card-rescale">
+        <app-activity></app-activity>
+    </div>
+</div>
+</div>
