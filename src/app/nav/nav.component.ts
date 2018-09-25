@@ -44,3 +44,4 @@ export class NavComponent implements OnInit {
   ngOnInit() {
     this.sidenavService.setSidenav(this.sidenav);
   }
+}
